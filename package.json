@@ -1,0 +1,27 @@
+{
+  "name": "counterspell",
+  "version": "1.0.0",
+  "description": "Counterspell!",
+  "main": "static/counterspell.js",
+  "dependencies": {
+    "typescript": "^3.9.7",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobj10/counterspell.git"
+  },
+  "keywords": [
+    "counterspell"
+  ],
+  "author": "Joshua Jacob",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/jacobj10/counterspell/issues"
+  },
+  "homepage": "https://github.com/jacobj10/counterspell#readme"
+}
