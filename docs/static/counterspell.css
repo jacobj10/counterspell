@@ -1,0 +1,8 @@
+.selection-lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-div {
+  margin: 0px 50px 10px 50px;
+}
