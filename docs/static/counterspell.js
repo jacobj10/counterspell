@@ -179,11 +179,13 @@ var TEAM_DIV2 = "#team2";
 var DELAY = 2000;
 function log(txt) {
     return __awaiter(this, void 0, void 0, function () {
-        var el, newEl;
+        var el, newEl, th;
         return __generator(this, function (_a) {
             el = document.querySelector("#output-table");
             newEl = document.createElement("tr");
-            newEl.innerText = txt;
+            th = document.createElement("th");
+            th.innerText = txt;
+            newEl.appendChild(th);
             el.appendChild(newEl);
             return [2 /*return*/];
         });
@@ -192,8 +194,8 @@ function log(txt) {
 var wait = function (ms) { return new Promise(function (res) { return setTimeout(res, ms); }); };
 var CounterSpellSimulator = /** @class */ (function () {
     function CounterSpellSimulator() {
-        this.teamA = new Team("a");
-        this.teamB = new Team("b");
+        this.teamA = new Team("A");
+        this.teamB = new Team("B");
         this.teamATable = new TeamTable(TEAM_DIV1, this.teamA);
         this.teamBTable = new TeamTable(TEAM_DIV2, this.teamB);
     }
@@ -205,7 +207,7 @@ var CounterSpellSimulator = /** @class */ (function () {
                     case 0:
                         spell = this.getSpell();
                         teamRef = [this.teamA, this.teamB];
-                        log("Someone from team " + teamRef[0].getName() + " has cast " + spell.name + " at a " + spell.level + " level");
+                        log("Someone from team " + teamRef[0].getName() + " has cast " + spell.name + " at level " + spell.level);
                         i = 1;
                         lastSpell = spell;
                         counterStack = [spell,];
@@ -232,13 +234,13 @@ var CounterSpellSimulator = /** @class */ (function () {
                         for (i_1 = counterStack.length - 1; i_1 >= 1; i_1 -= 2) {
                             srcSpell = counterStack[i_1];
                             dstSpell = counterStack[i_1 - 1];
-                            log("But alas, " + srcSpell.name + " has countered " + dstSpell.name);
+                            log("Finally, " + srcSpell.name + " has countered " + dstSpell.name + "!");
                         }
                         if (counterStack.length % 2 == 0) {
-                            log("THE OG SPELL WAS COUNTERED!");
+                            log("The original " + spell.name + " was countered!");
                         }
                         else {
-                            log("THE OG SPELL SUCCEEDED!");
+                            log("The original " + spell.name + " was cast!");
                         }
                         return [2 /*return*/];
                 }

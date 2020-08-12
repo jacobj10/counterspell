@@ -180,14 +180,16 @@ const DELAY = 2000;
 async function log(txt: string) {
   const el = document.querySelector("#output-table");
   const newEl = document.createElement("tr");
-  newEl.innerText = txt;
+  const th = document.createElement("th");
+  th.innerText = txt;
+  newEl.appendChild(th);
   el.appendChild(newEl);
 }
 const wait = (ms) => new Promise(res => setTimeout(res, ms));
 
 class CounterSpellSimulator {
-  teamA = new Team("a");
-  teamB = new Team("b");
+  teamA = new Team("A");
+  teamB = new Team("B");
 
   teamATable: TeamTable;
   teamBTable: TeamTable;
@@ -200,7 +202,7 @@ class CounterSpellSimulator {
   async startCounterspell() {
     const spell = this.getSpell();
     const teamRef = [this.teamA, this.teamB]
-    log(`Someone from team ${teamRef[0].getName()} has cast ${spell.name} at a ${spell.level} level`);
+    log(`Someone from team ${teamRef[0].getName()} has cast ${spell.name} at level ${spell.level}`);
     let i: number = 1;
     let lastSpell = spell;
     const counterStack: SpellData[] = [spell,];
@@ -222,12 +224,12 @@ class CounterSpellSimulator {
     for (let i = counterStack.length - 1; i >= 1; i-= 2) {
       const srcSpell = counterStack[i];
       const dstSpell = counterStack[i - 1];
-      log(`But alas, ${srcSpell.name} has countered ${dstSpell.name}`);
+      log(`Finally, ${srcSpell.name} has countered ${dstSpell.name}!`);
     }
     if (counterStack.length % 2 == 0) {
-      log("THE OG SPELL WAS COUNTERED!");
+      log(`The original ${spell.name} was countered!`);
     } else {
-      log("THE OG SPELL SUCCEEDED!");
+      log(`The original ${spell.name} was cast!`);
     }
   }
 

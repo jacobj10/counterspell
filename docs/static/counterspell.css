@@ -1,8 +1,175 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto ', sans-serif;
+  font-size: 14px;
+  color: #303036;
+  line-height: 1.4;
+  background-color: #F9F9F9;
+}
 .selection-lists {
   display: flex;
   flex-wrap: wrap;
 }
 
 .team-div {
-  margin: 0px 50px 10px 50px;
+  margin: 5px 25px 10px 25px;
 }
+
+.data-table {
+  border-collapse: collapse;
+}
+.data-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.data-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.data-table tr:hover {background-color: #ddd;}
+
+.container {
+  margin: 0 auto;
+}
+
+/* navbar */
+.navbar {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  background-color: #2196F3;
+}
+
+.logo,
+.nav {
+  display: inline-block;
+  margin: 0;
+}
+
+/* nav links */
+.nav {
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.navbar a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #DDD;
+}
+
+.nav-right {
+  float: right;
+  line-height: 39px;
+}
+
+.btn {
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #2196F3;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #2A7F62;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.btn:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, .3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+#output-table {
+  margin-left:auto;
+  margin-right:auto;
+}
+/* responsive */
+@media screen and (max-width: 677px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Heavily taken from:
+ https://codepen.io/sebj54/pen/oxluI
+ https://codepen.io/jobar31/pen/abzVyJv
+ */
