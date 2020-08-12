@@ -213,29 +213,44 @@ var CounterSpellSimulator = /** @class */ (function () {
                         counterStack = [spell,];
                         _a.label = 1;
                     case 1:
-                        if (!true) return [3 /*break*/, 3];
-                        return [4 /*yield*/, wait(DELAY)];
-                    case 2:
-                        _a.sent();
+                        if (!true) return [3 /*break*/, 5];
                         ref = teamRef[i++ % 2];
                         newLastSpell = { name: "", level: FAILED };
-                        while (newLastSpell.level == FAILED) {
-                            newLastSpell = ref.maybeCounterspell(lastSpell);
-                        }
+                        _a.label = 2;
+                    case 2:
+                        if (!(newLastSpell.level == FAILED)) return [3 /*break*/, 4];
+                        return [4 /*yield*/, wait(DELAY)];
+                    case 3:
+                        _a.sent();
+                        newLastSpell = ref.maybeCounterspell(lastSpell);
+                        return [3 /*break*/, 2];
+                    case 4:
                         if (newLastSpell.level == IMPOSSIBLE) {
-                            return [3 /*break*/, 3];
+                            return [3 /*break*/, 5];
                         }
                         else {
                             counterStack.push(newLastSpell);
                             lastSpell = newLastSpell;
                         }
                         return [3 /*break*/, 1];
-                    case 3:
-                        for (i_1 = counterStack.length - 1; i_1 >= 1; i_1 -= 2) {
-                            srcSpell = counterStack[i_1];
-                            dstSpell = counterStack[i_1 - 1];
-                            log("Finally, " + srcSpell.name + " has countered " + dstSpell.name + "!");
-                        }
+                    case 5:
+                        i_1 = counterStack.length - 1;
+                        _a.label = 6;
+                    case 6:
+                        if (!(i_1 >= 1)) return [3 /*break*/, 9];
+                        srcSpell = counterStack[i_1];
+                        dstSpell = counterStack[i_1 - 1];
+                        return [4 /*yield*/, wait(DELAY)];
+                    case 7:
+                        _a.sent();
+                        log("Finally, " + srcSpell.name + " has countered " + dstSpell.name + "!");
+                        _a.label = 8;
+                    case 8:
+                        i_1 -= 2;
+                        return [3 /*break*/, 6];
+                    case 9: return [4 /*yield*/, wait(DELAY)];
+                    case 10:
+                        _a.sent();
                         if (counterStack.length % 2 == 0) {
                             log("The original " + spell.name + " was countered!");
                         }

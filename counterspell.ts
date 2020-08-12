@@ -208,10 +208,10 @@ class CounterSpellSimulator {
     const counterStack: SpellData[] = [spell,];
 
     while (true) {
-      await wait(DELAY);
       const ref = teamRef[i++ % 2];
       let newLastSpell = {name: "", level: FAILED};
       while (newLastSpell.level == FAILED) {
+        await wait(DELAY);
         newLastSpell = ref.maybeCounterspell(lastSpell);
       }
       if (newLastSpell.level == IMPOSSIBLE) {
@@ -224,8 +224,10 @@ class CounterSpellSimulator {
     for (let i = counterStack.length - 1; i >= 1; i-= 2) {
       const srcSpell = counterStack[i];
       const dstSpell = counterStack[i - 1];
+      await wait(DELAY);
       log(`Finally, ${srcSpell.name} has countered ${dstSpell.name}!`);
     }
+    await wait(DELAY);
     if (counterStack.length % 2 == 0) {
       log(`The original ${spell.name} was countered!`);
     } else {
