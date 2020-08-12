@@ -207,7 +207,7 @@ var CounterSpellSimulator = /** @class */ (function () {
                     case 0:
                         spell = this.getSpell();
                         teamRef = [this.teamA, this.teamB];
-                        log("Someone from team " + teamRef[0].getName() + " has cast " + spell.name + " at level " + spell.level);
+                        log("Someone from team " + teamRef[0].getName() + " has cast " + (spell.name.length != 0 ? spell.name : 'an unknown spell') + " at level " + spell.level);
                         i = 1;
                         lastSpell = spell;
                         counterStack = [spell,];

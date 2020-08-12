@@ -28,11 +28,25 @@ body {
 
 .data-table tr:hover {background-color: #ddd;}
 
+input {
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid;
+}
+input:focus {
+  outline: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* "Inpsired" CSS */
 .container {
   margin: 0 auto;
 }
 
-/* navbar */
 .navbar {
   padding: 20px 0;
   margin-bottom: 20px;
@@ -47,7 +61,6 @@ body {
   margin: 0;
 }
 
-/* nav links */
 .nav {
   padding: 0;
   margin: 0;
@@ -138,7 +151,7 @@ body {
   margin-left:auto;
   margin-right:auto;
 }
-/* responsive */
+
 @media screen and (max-width: 677px) {
   .container {
     width: 80%;

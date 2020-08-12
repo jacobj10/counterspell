@@ -202,7 +202,7 @@ class CounterSpellSimulator {
   async startCounterspell() {
     const spell = this.getSpell();
     const teamRef = [this.teamA, this.teamB]
-    log(`Someone from team ${teamRef[0].getName()} has cast ${spell.name} at level ${spell.level}`);
+    log(`Someone from team ${teamRef[0].getName()} has cast ${spell.name.length != 0 ? spell.name : 'an unknown spell'} at level ${spell.level}`);
     let i: number = 1;
     let lastSpell = spell;
     const counterStack: SpellData[] = [spell,];

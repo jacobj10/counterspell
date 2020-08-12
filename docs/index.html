@@ -5,21 +5,19 @@
   <link rel="stylesheet" href="./static/counterspell.css">
 </head>
 <body>
-  <!-- navbar -->
   <nav class="navbar">
-
     <div class="container">
-
       <h1 class="logo"><a href="#">Counterspell!</a></h1>
       <ul class="nav nav-right">
         <li><a href="https://github.com/jacobj10/counterspell">Source</a></li>
         <li><a href="/">Me</a></li>
       </ul>
-    </div><!--/.container-->
+    </div>
+  </nav>
 
-  </nav><!--/.navbar-->
   <div class="selection-lists">
     <div id="team1" class="team-div">
+      <h2> Team A (Casting Team) </h2>
       <table class="data-table">
         <tr>
           <th>Player Name</th>
@@ -34,12 +32,13 @@
             <input type="number" id="team1-cslevel" min="3" max="9" value="3">
           </th>
           <th>
-            <input type="number" id="team1-spellmodifier" min="-5" value="0">
+            <input type="number" id="team1-spellmodifier" min="-5" max="1000" value="0">
           </th>
         </tr>
       </table>
     </div>
     <div id="team2" class="team-div">
+      <h2> Team B </h2>
       <table class="data-table">
         <tr>
           <th>Player Name</th>
@@ -54,12 +53,13 @@
             <input type="number" id="team2-cslevel" min="3" max="9" value="3">
           </th>
           <th>
-            <input type="number" id="team2-spellmodifier" min="-5" value="0">
+            <input type="number" id="team2-spellmodifier" min="-5" max="1000" value="0">
           </th>
         </tr>
       </table>
     </div>
     <div id="spell" class="team-div">
+      <h2> Spell to cast </h2>
       <table id="spell-table" class="data-table">
         <tr>
           <th>
