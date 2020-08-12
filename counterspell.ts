@@ -136,7 +136,8 @@ class TeamTable {
     newEntry.appendChild(csLevelEntry);
     newEntry.appendChild(modEntry);
 
-    this.tableRef.appendChild(newEntry);
+    const tableBody = this.tableRef.querySelector("tbody");
+    tableBody.insertBefore(newEntry, this.lastRowRef);
 
     this.team.addPlayer({
       name: name,
@@ -148,10 +149,10 @@ class TeamTable {
 
   constructor(private divStr: string, private team: Team) {
     this.div = document.querySelector(divStr);
-    this.tableRef = this.div.querySelector("#data-table");
+    this.tableRef = this.div.querySelector(".data-table");
 
-    const inputTable = this.div.querySelector("#input-table");
-    this.lastRowRef = inputTable.querySelector("tr");
+    const results = this.tableRef.querySelectorAll("tr");
+    this.lastRowRef = results[results.length - 1];
 
     this.setupColumnListeners();
   }
@@ -181,7 +182,6 @@ async function log(txt: string) {
   const newEl = document.createElement("tr");
   newEl.innerText = txt;
   el.appendChild(newEl);
-  console.log(txt);
 }
 const wait = (ms) => new Promise(res => setTimeout(res, ms));
 

@@ -2,71 +2,70 @@
 <head>
   <script src="./static/counterspell.js"></script>
   <link rel="stylesheet" href="./static/normalize.css">
+  <link rel="stylesheet" href="./static/counterspell.css">
 </head>
 <body>
-  <div id="team1">
-    <table id="data-table">
-      <tr>
-        <th>Player Name</th>
-        <th>Counterspell Level</th>
-        <th>Spellcasting Modifier</th>
-      </tr>
-    </table>
-    <table id="input-table">
-      <tr>
-        <th>
-          <input type="text" id="team1-name">
-        </th>
-        <th>
-          <input type="number" id="team1-cslevel" min="3" max="9" value="3">
-        </th>
-        <th>
-          <input type="number" id="team1-spellmodifier" min="-5" value="0">
-        </th>
-      </tr>
-    </table>
-  </div>
-  <div id="team2">
-    <table id="data-table">
-      <tr>
-        <th>Player Name</th>
-        <th>Counterspell Level</th>
-        <th>Spellcasting Modifier</th>
-      </tr>
-    </table>
-    <table id="input-table">
-      <tr>
-        <th>
-          <input type="text" id="team2-name">
-        </th>
-        <th>
-          <input type="number" id="team2-cslevel" min="3" max="9" value="3">
-        </th>
-        <th>
-          <input type="number" id="team2-spellmodifier" min="-5" value="0">
-        </th>
-      </tr>
-    </table>
-  </div>
-  <div id="spell">
-    <table id="spell-table">
-      <tr>
-        <th>
-          Spell
-        </th>
-        <th>
-          Spell Level
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <input type="text" id="spell-name">
-        </th>
-        <th>
-          <input type="number" id="spell-level" min="0" max="9" value="0">
-        </th>
-      </tr>
-    </table>
+  <div class="selection-lists">
+    <div id="team1" class="team-div">
+      <table class="data-table">
+        <tr>
+          <th>Player Name</th>
+          <th>Counterspell Level</th>
+          <th>Spellcasting Modifier</th>
+        </tr>
+        <tr>
+          <th>
+            <input type="text" id="team1-name">
+          </th>
+          <th>
+            <input type="number" id="team1-cslevel" min="3" max="9" value="3">
+          </th>
+          <th>
+            <input type="number" id="team1-spellmodifier" min="-5" value="0">
+          </th>
+        </tr>
+      </table>
+    </div>
+    <div id="team2" class="team-div">
+      <table class="data-table">
+        <tr>
+          <th>Player Name</th>
+          <th>Counterspell Level</th>
+          <th>Spellcasting Modifier</th>
+        </tr>
+        <tr>
+          <th>
+            <input type="text" id="team2-name">
+          </th>
+          <th>
+            <input type="number" id="team2-cslevel" min="3" max="9" value="3">
+          </th>
+          <th>
+            <input type="number" id="team2-spellmodifier" min="-5" value="0">
+          </th>
+        </tr>
+      </table>
+    </div>
+    <div id="spell" class="team-div">
+      <table id="spell-table">
+        <tr>
+          <th>
+            Spell
+          </th>
+          <th>
+            Spell Level
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <input type="text" id="spell-name">
+          </th>
+          <th>
+            <input type="number" id="spell-level" min="0" max="9" value="0">
+          </th>
+        </tr>
+      </table>
+    </div>
   </div>
   <button id="cs-button">Counterspell!</button>
   <table id="output-table">

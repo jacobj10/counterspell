@@ -111,9 +111,9 @@ var TeamTable = /** @class */ (function () {
         this.divStr = divStr;
         this.team = team;
         this.div = document.querySelector(divStr);
-        this.tableRef = this.div.querySelector("#data-table");
-        var inputTable = this.div.querySelector("#input-table");
-        this.lastRowRef = inputTable.querySelector("tr");
+        this.tableRef = this.div.querySelector(".data-table");
+        var results = this.tableRef.querySelectorAll("tr");
+        this.lastRowRef = results[results.length - 1];
         this.setupColumnListeners();
     }
     TeamTable.prototype.setupColumnListeners = function () {
@@ -148,7 +148,8 @@ var TeamTable = /** @class */ (function () {
         newEntry.appendChild(nameEntry);
         newEntry.appendChild(csLevelEntry);
         newEntry.appendChild(modEntry);
-        this.tableRef.appendChild(newEntry);
+        var tableBody = this.tableRef.querySelector("tbody");
+        tableBody.insertBefore(newEntry, this.lastRowRef);
         this.team.addPlayer({
             name: name,
             counterspellLevel: csLevel,
@@ -184,7 +185,6 @@ function log(txt) {
             newEl = document.createElement("tr");
             newEl.innerText = txt;
             el.appendChild(newEl);
-            console.log(txt);
             return [2 /*return*/];
         });
     });
