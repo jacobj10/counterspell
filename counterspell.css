@@ -42,6 +42,14 @@ h2 {
   text-align: center;
 }
 
+.description h2 {
+    text-align: center;
+}
+
+.description p {
+  margin: auto;
+  width: 25%;
+}
 /* "Inpsired" CSS */
 .container {
   margin: 0 auto;

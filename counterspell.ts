@@ -77,15 +77,6 @@ class Team {
      this.players.push(player);
    }
 
-   // initCounterspell(level: number): number {
-   //   if (this.iter >= this.players.length) {
-   //     log(`No more players left on team ${this.name}`);
-   //     this.iter -= 1;
-   //     return -2;
-   //   }
-   //   return this.players[this.iter++].initCounterspell(level);
-   // }
-
    maybeCounterspell(spell: SpellData): SpellData {
      if (this.iter >= this.players.length) {
        return {name: "None", level: IMPOSSIBLE};
